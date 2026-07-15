@@ -5,4 +5,52 @@ use startersql;
 
 -- quering Data in mysql
 -- to select a perticular column
-SELECT name,gender FROM users;
+-- SELECT name,gender FROM users;
+
+-- quering only male 
+-- SELECT * FROM users WHERE gender='male';
+-- SELECT * FROM users WHERE gender!='male';
+-- != , we can also use : <> : for not equal to
+
+-- Greater Than / Less Than
+-- SELECT * FROM users WHERE date_of_birth < '1995-01-01';
+-- SELECT * FROM users WHERE id > 10;
+
+ -- Greater Than or Equal / Less Than or Equal
+-- SELECT * FROM users WHERE id >= 5;
+-- SELECT * FROM users WHERE id <= 20;
+
+-- Working with NULL
+-- is null
+-- SELECT * FROM users WHERE date_of_birth IS NULL;
+-- is not null
+-- SELECT * FROM users WHERE date_of_birth IS NOT NULL;
+
+-- BETWEEN
+-- SELECT * FROM users WHERE date_of_birth BETWEEN '1990-01-01' AND '2000-12-31';
+-- in 
+-- SELECT * FROM users WHERE gender IN ('Male', 'Other');
+
+-- LIKE (Pattern Matching)
+-- SELECT * FROM users WHERE name LIKE 'A%';  -- Starts with A
+-- SELECT * FROM users WHERE name LIKE '%a';  -- Ends with a
+-- SELECT * FROM users WHERE name LIKE '%li%'; -- Contains 'li'
+
+-- AND / OR
+-- SELECT * FROM users WHERE gender = 'Female' AND date_of_birth > '1990-01-01';
+
+-- SELECT * FROM users WHERE gender = 'Male' OR gender = 'Other';
+
+-- ORDER BY
+-- SELECT * FROM users ORDER BY date_of_birth ASC; 
+-- Show all users sorted by date of birth in ascending order. --Show the oldest people first.
+
+-- Show all users sorted by name in descending alphabetical order.
+--  SELECT * FROM users ORDER BY name DESC; --Sort names from Z to A.
+
+-- LIMIT
+-- SELECT * FROM users LIMIT 5;  -- Top 5 rows
+-- SELECT * FROM users LIMIT 10 OFFSET 5;  -- Skip first 5 rows, then get next 10
+-- SELECT * FROM users LIMIT 5, 10;  -- Get 10 rows starting from the 6th row (Same as above)
+-- SELECT * FROM users ORDER BY created_at DESC LIMIT 10;
+
